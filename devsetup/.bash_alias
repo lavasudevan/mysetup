@@ -1,0 +1,11 @@
+alias h='history'
+alias ls='ls -alrt'
+alias lsd='ls -l | grep ^d' 
+alias srcgit='. ~/.bashrc.custom'
+  
+  
+alias which='alias | /usr/bin/which --tty-only --read-alias --show-dot --show-tilde'
+alias gogit='pushd /x/home/lavasudevan/githome/Managed*'
+alias gogitdb='pushd /x/home/lavasudevan/githome/ManagedStageM*/DB*'
+ 
+alias ppb='sudo -u ppbuild bash'
