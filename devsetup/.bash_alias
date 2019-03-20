@@ -1,6 +1,6 @@
 alias h='history'
-alias ls='ls -alrt'
-alias lsd='ls -l | grep ^d' 
+alias ls='ls -alrth'
+alias lsd='ls -hl | grep ^d' 
 alias srcgit='. ~/.bashrc.custom'
   
   

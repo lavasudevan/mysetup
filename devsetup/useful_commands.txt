@@ -3,3 +3,10 @@
    command > /dev/null 2>&1
 
    https://www.tutorialspoint.com/unix/unix-io-redirections.htm
+
+
+2. tar(bsdtar) with out .DS_Store and ._* files in mac. 
+Note: export COPYFILE_DISABLE=true doesnt seem to take effect
+
+rm exp.tar; tar --exclude ._* --exclude .DS_Store -cf exp.tar lax/  ; rm oo1.txt; tar -tf exp.tar | sort > oo1.txt ; wc oo1.txt
+
