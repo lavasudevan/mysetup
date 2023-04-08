@@ -3,9 +3,55 @@ alias ls='ls -alrth'
 alias lsd='ls -hl | grep ^d' 
 alias srcgit='. ~/.bashrc.custom'
   
-  
-alias which='alias | /usr/bin/which --tty-only --read-alias --show-dot --show-tilde'
-alias gogit='pushd /x/home/lavasudevan/githome/Managed*'
+#alias which='alias | /usr/bin/which --tty-only --read-alias --show-dot --show-tilde'
+alias gogit='pushd /Users/c65748a/githome'
 alias gogitdb='pushd /x/home/lavasudevan/githome/ManagedStageM*/DB*'
  
 alias ppb='sudo -u ppbuild bash'
+
+alias awst='okta-aws test sts get-caller-identity'
+alias awsp='okta-aws prod sts get-caller-identity'
+alias goc='pushd ~/go/src/github.com/cricsum'
+alias cpl='scp -p sas@10.28.251.199:/opt/sas/integration/agent/logs/onprem_direct.log .'
+alias atoken='gimme-aws-creds -k -p $AWS_PROFILE'
+
+sshd() {
+  echo execing ssh using stage pem $1
+  ssh -i ~/pem/dataengg-nonprod-key.pem ec2-user@$1
+
+}
+
+dus() {
+  du -h -d 1 $1 | sort -nr
+} 
+
+dfs() {
+  df -h $1
+}
+
+mywhich() {
+  pt=`echo $PATH | sed 's/:/ /g'`
+  for t in $pt; do
+    if test -f $t/$1; then
+       echo $t/$1
+    fi
+  done
+}
+
+fgrep() {
+  echo finding "$1"
+  find . -type f | xargs grep -i "$1"
+}
+
+
+kprc(){
+  set -x
+  echo finding "$1"
+  ps -ef | grep -i $1 | awk '{print $2}'
+  #if "$2" eq "kill"; then
+  echo "killing "
+  ps -ef | grep -i $1 | awk '{print $2}' | xargs kill -9
+  #fi
+  set +x
+}
+

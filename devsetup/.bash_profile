@@ -11,6 +11,7 @@ GITHOME=/x/githome
 
 ORACLE_HOME=/x/home/oracle/product/11.2.0.2
 MYSQL_HOME=/usr/local/mysql/
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 
 GOROOT=/usr/local/go
 #export GOHOME=/x/githome/tools/go
